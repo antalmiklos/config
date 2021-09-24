@@ -1,0 +1,31 @@
+{
+    "workbench.colorTheme": "Dracula Soft",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.mustache": "html"
+    },
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange",
+    "todo-tree.tree.showScanModeButton": false,
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.allowWorkspaceConfiguration": true,
+    "terminal.integrated.fontFamily": "Monospace",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.experimentalLinkProvider": false,
+    "terminal.integrated.environmentChangesRelaunch": false,
+    "terminal.integrated.env.linux": {
+    
+    },
+}
