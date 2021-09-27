@@ -184,10 +184,13 @@ mode "resize" {
 # finds out, if available)
 bar {
         status_command i3status
+        separator_symbol " ❱ "
+        font pango:DejaVu Sans Mono 9
         colors {
                 background #2e3440
                 statusline #d8dee9
-                separator  #4c566a
+                separator  #eceff4
+
 
                 focused_workspace  #2e3440 #2e3440 #d8dee9
                 active_workspace   #2e3440 #2e3440 #d8dee9
