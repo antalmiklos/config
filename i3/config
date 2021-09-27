@@ -47,9 +47,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "dmenu_run -i -l 5 -nf '#D8DEE9' -nb '#2E3440' -sb '#4C566A' -sf '#d8dee9'"
+#bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -106,9 +105,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1  "
+set $ws2 "2  "
+set $ws3 "3  "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -129,6 +128,9 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+assign [class="Firefox"] $ws2
+assign [class="Google-chrome"] $ws2
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -148,7 +150,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+gaps inner 10
+gaps outer -10
+
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -173,18 +180,23 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
+        colors {
+                background #2e3440
+                statusline #d8dee9
+                separator  #4c566a
+
+                focused_workspace  #2e3440 #2e3440 #d8dee9
+                active_workspace   #2e3440 #2e3440 #d8dee9
+                inactive_workspace #434c5e #434c5e #eceff4
+                urgent_workspace   #2F343A #900000 #FFFFFF
+                binding_mode       #2F343A #900000 #FFFFFF
+        }
 }
 
 
 # nitrogen start
 exec --no-startup-id nitrogen --restore
-
-
-# Keyboard switcher
-
