@@ -11,8 +11,6 @@ SKIPINSTALLS=0
 function all(){
     i3
     zsh
-    i3
-
 }
 
 function sshkey(){
@@ -34,8 +32,7 @@ function zsh(){
     return 0
 }
 function i3(){
-    sudo apt-get update -y && apt-get install -y \
-        i3 \
+    sudo apt-get update -y && apt-get install -y i3 \
         i3-gaps \
         feh \
         nitrogen
