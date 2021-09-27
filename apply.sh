@@ -30,7 +30,7 @@ function zsh(){
         echo "Error while installing ZSH, exiting";
         exit 1;
     fi
-    $(pwd)/zsh/zshinstall.sh}
+    $(pwd)/zsh/zshinstall.sh
 
 function i3(){
     sudo apt-get update -y && apt-get install -y \
@@ -65,7 +65,7 @@ echo ${SSHKEYGENERATE}
 if [[ $SKIPINSTALLS -eq 1 ]]
 then
 #install git and python3
-sudo apt-get update -y && sudo apt-get install -y python3 \
+    sudo apt-get update -y && sudo apt-get install -y python3 \
         ansible \
         git \
         vim \
