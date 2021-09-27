@@ -20,8 +20,7 @@ function sshkey(){
 }
 
 function zsh(){
-    sudo apt-get update -y && apt-get install -y \
-        powerline \
+     apt-get update -y && apt-get install -y powerline \
         zsh
     if [[ $? -ne 0 ]]
     then
@@ -32,7 +31,7 @@ function zsh(){
     return 0
 }
 function i3(){
-    sudo apt-get update -y && apt-get install -y i3 \
+     apt-get update -y && apt-get install -y i3 \
         i3-gaps \
         feh \
         nitrogen
@@ -63,7 +62,7 @@ echo ${SSHKEYGENERATE}
 if [[ $SKIPINSTALLS -eq 1 ]]
 then
 #install git and python3
-    sudo apt-get update -y && sudo apt-get install -y python3 \
+     apt-get update -y &&  apt-get install -y python3 \
         ansible \
         git \
         vim \
@@ -75,7 +74,7 @@ fi
 
 if [[ $ALL -eq 1 ]]
 then
-    sudo apt-get update -y && apt-get install -y \
+     apt-get update -y && apt-get install -y \
         python3 \
         git \
         ansible \
@@ -91,7 +90,7 @@ fi
 
 if [[ $I3INSTALL -eq 1 ]]
 then
-    sudo apt-get update -y && apt-get install -y \
+     apt-get update -y && apt-get install -y \
         i3 \
         i3-gaps \
         feh \
@@ -99,8 +98,8 @@ then
 fi
 if [[ $ZSH -eq 1 ]]
 then
-    sudo add-apt-repository universe
-    sudo apt-get update -y && apt-get install -y \
+     add-apt-repository universe
+     apt-get update -y && apt-get install -y \
         powerline \
         zsh 
     $(pwd)/zsh/zshinstall.sh
