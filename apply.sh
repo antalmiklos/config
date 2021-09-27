@@ -31,7 +31,8 @@ function zsh(){
         exit 1;
     fi
     $(pwd)/zsh/zshinstall.sh
-
+    return 0
+}
 function i3(){
     sudo apt-get update -y && apt-get install -y \
         i3 \
